@@ -1,2 +1,0 @@
-# SriLanka
-Sri Lanka Website
