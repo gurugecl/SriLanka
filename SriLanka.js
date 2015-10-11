@@ -70,26 +70,11 @@ var main = function() {
     return false;
   });
 
-
-var timer;
-
-$('.pic').on('mouseenter', function() {
-timer = setInterval(function() {
-var firstSlide = $(this).find('.colombo:first');
-firstSlide.fadeOut(1000).next().fadeIn(1000, function(){
-firstSlide.appendTo('.pic');
-   });        
-    }, 25);
-}).on('mouseleave', function(){
-    timer && clearInterval(timer);
-    
-});
+// AUTOMATICALLY CHANGE SLIDES
 var imagesTotal = 10;
 var currentImage = 1;
 var thumbsTotalWidth = 0;
 
-
-// AUTOMATIC CHANGE SLIDES
 function autoChangeSlides() {
   $('img.previewImage' + currentImage).hide();
   $('a.thumbnailsimage' + currentImage).removeClass("active");
