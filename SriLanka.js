@@ -32,7 +32,6 @@ var main = function() {
   $('.arrow-next').click(function() {
     var currentSlide = $('.active-slide');
     var nextSlide = currentSlide.next();
-
     var currentDot = $('.active-dot');
     var nextDot = currentDot.next();
 
@@ -53,7 +52,6 @@ var main = function() {
   $('.arrow-prev').click(function() {
     var currentSlide = $('.active-slide');
     var prevSlide = currentSlide.prev();
-
     var currentDot = $('.active-dot');
     var prevDot = currentDot.prev();
 
@@ -70,10 +68,11 @@ var main = function() {
     return false;
   });
 
-// AUTOMATICALLY CHANGE SLIDES
+ // AUTOMATICALLY CHANGE SLIDES 
+
 var imagesTotal = 10;
 var currentImage = 1;
-var thumbsTotalWidth = 0;
+
 
 function autoChangeSlides() {
   $('img.previewImage' + currentImage).hide();
@@ -92,6 +91,20 @@ function autoChangeSlides() {
 var slideTimer = setInterval(function() {autoChangeSlides(); }, 3000);
 
 };
+
+function scrollWin() {
+    window.scrollTo(0, 645);
+}
+function scrollWin2() {
+    window.scrollTo(0, 1300);
+}
+function scrollWin3() {
+    window.scrollTo(0, 2200);
+}
+function scrollWin4() {
+    window.scrollTo(0, 0);
+}
+
 
 
 $(document).ready(main);
