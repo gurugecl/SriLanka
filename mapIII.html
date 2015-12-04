@@ -1,4 +1,6 @@
-<!doctype html>
+<!DOCTYPE html>
+
+	
 <html class="no-js" lang="en">
 
 <head>
@@ -12,7 +14,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 <link rel="stylesheet" href="http://s3.amazonaws.com/codecademy-content/courses/ltp/css/bootstrap.css">
-    
+<link rel="stylesheet" type="text/css" href="navmap.css">    
    
 
 </head>
@@ -20,42 +22,39 @@
 
 
 
-  <div class="nav">
-      <div class="container">
-        <ul class="pull-right">
-          <li><a href="file:///C:/Users/Owner/Desktop/Websites/lankaIII.html">Home</a></li>
-        </ul>
-      </div>
-  </div>
-
+  <div id="navigation">
+    <a href="#" class="menu-link">Menu</a>
+		<a href="file:///C:/Users/Owner/Desktop/Websites/navlanka.html">Home</a>
+    <a href="file:///C:/Users/Owner/Desktop/transportIII.html">Transportation</a>
+		<a href="http://www.worldtravelguide.net/sri-lanka/weather-climate-geography">Geography</a>
+		<a href="https://www.cia.gov/library/publications/the-world-factbook/geos/ce.html">Facts</a>
+		<a href="https://www.lanka.com/about/history/">History</a>
+	</div>
 
     <!-- Slide out menu -->
     <div class="menu">
       <div class="icon-close">
         <img src="http://s3.amazonaws.com/codecademy-content/courses/ltp2/img/uber/close.png">
       </div>
+      <div id="links">
       <ul>
-        <li><a onmouseover="scrollWin()">World Map</a></li>
-        <li><a onmouseover="scrollWin2()">City Maps</a></li>
-        <li><a onmouseover="scrollWin3()">Forecast</a></li>
-        <li><a onmouseover="scrollWin4()">Home</a></li>
+        <li><a href="#scroll1">Home</a></li>
+        <li><a href="#scroll2">World Maps</a></li>
+        <li><a href="#scroll3">City Maps</a></li>
+        <li><a href="#scroll4">Forecast</a></li>
       </ul>
     </div>
-
-    <div class="icon-menu">
-        <i class="fa fa-bars"></i>
-        MENU
     </div>
 
+    <div id="scroll1" class="link"></div>
     <div class="jumbotron">
       <div class="container">
         <h1>Sri Lanka On The Map</h1>
         <p>At the Crossroads of the World Since Ancient Times</p>
-        <a href="#" class="menu-link">MENU</a>
       </div>
     </div> 
 
-
+  <div id="scroll2" class="link"></div>
   <div class="row">
   <div class="col-md-7">
     <h3>Asia</h3>
@@ -76,7 +75,7 @@
   </div>
   </div>
 
-
+<div id="scroll3" class="link"></div>
 <div class="tripadvisor">
 <div class="row">
 <div class="col-md-4">
@@ -141,6 +140,7 @@
 </div>
 </div>
 
+<div id="scroll4" class="link"></div>
 <div class="row">
   <div class="col-md-4">
     <div id="weather" class="weather"></div>
@@ -153,12 +153,23 @@
   </div>
 </div>
 
+    <!-- Load jQuery -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+ 
+    <!-- Load ScrollTo -->
+    <script src="http://flesler-plugins.googlecode.com/files/jquery.scrollTo-1.4.2-min.js"></script>
+ 
+    <!-- Load LocalScroll -->
+    <script src="http://flesler-plugins.googlecode.com/files/jquery.localscroll-1.2.7-min.js"></script>
 
 
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="mapIII.js"></script> 
 <script src="weatherlibrarymapIII.js"></script>
     
 </body>
 </html>
+
+
+
+
