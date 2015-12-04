@@ -21,7 +21,7 @@ body {
 }
 
 .jumbotron {
-  background-image:url('http://www.picturemojo.co.nz/wp-content/uploads/symbiostock_rf_content/2058-compass-and-old-map-india.jpg');
+  background-image:url('http://paragonsrilanka.com/tl_files/sri_lanka/history.jpg');
   height: 500px;
   background-repeat: no-repeat;
   background-size: cover;
@@ -45,7 +45,7 @@ body {
 }
 
 .container .menu-link {
-  color: black;
+  color: #fff;
   font: bold;
 }
 
@@ -60,6 +60,7 @@ body {
   position: fixed;
   width: 285px;
   top: 0px;
+  z-index: 401;
 }
 
 .menu ul {
