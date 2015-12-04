@@ -151,24 +151,15 @@ var main = function() {
     }, 200);
   });
 
+  $('#links').localScroll({
+           target:'body'
+        });
+
 };
 
  $(document).ready(main);
 
- /*menu section finder */
 
-function scrollWin() {
-    window.scrollTo(0, 700);
-}
-function scrollWin2() {
-    window.scrollTo(0, 1350);
-}
-function scrollWin3() {
-    window.scrollTo(0, 2600);
-}
-function scrollWin4() {
-    window.scrollTo(0, 0);
-}
 
 
 /* weather forecast */
