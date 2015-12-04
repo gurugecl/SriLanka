@@ -1,5 +1,7 @@
 var main = function() {
 
+
+  
 /* Slide out menu. Push the body and the nav over by 285px over */
 
   $('.menu-link').click(function(){
@@ -90,21 +92,16 @@ function autoChangeSlides() {
 
 var slideTimer = setInterval(function() {autoChangeSlides(); }, 3000);
 
+$('#links').localScroll({
+           target:'body'
+        });
+
 };
 
-function scrollWin() {
-    window.scrollTo(0, 645);
-}
-function scrollWin2() {
-    window.scrollTo(0, 1300);
-}
-function scrollWin3() {
-    window.scrollTo(0, 2200);
-}
-function scrollWin4() {
-    window.scrollTo(0, 0);
-}
 
 
 
 $(document).ready(main);
+
+
+        
