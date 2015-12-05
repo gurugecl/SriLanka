@@ -1,0 +1,9 @@
+#text {
+	overflow-y: auto;
+	height: 150px;
+}
+
+#form {
+	width:600px;
+	margin: auto;
+}
