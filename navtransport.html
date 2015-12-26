@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en-us" ng-app="myApp">
+
+  <head>
+    <link href="http://s3.amazonaws.com/codecademy-content/courses/ltp/css/shift.css" rel="stylesheet">
+    
+    <link rel="stylesheet" href="http://s3.amazonaws.com/codecademy-content/courses/ltp/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="navtransport.css">   
+    
+  </head>
+
+  <body>
+
+  <div id="navigation">
+    <a href="#" class="menu-link">Menu</a>
+    <a href="file:///C:/Users/Owner/Desktop/sri_lanka_website/navlanka.html">Home</a>
+    <a href="file:///C:/Users/Owner/Desktop/sri_lanka_website/navmap.html">Map</a>
+    <a href="http://www.worldtravelguide.net/sri-lanka/weather-climate-geography">Geography</a>
+    <a href="https://www.cia.gov/library/publications/the-world-factbook/geos/ce.html">Facts</a>
+    <a href="https://www.lanka.com/about/history/">History</a>
+  </div>
+
+  <!-- Slide out menu -->
+    <div class="menu">
+      <div class="icon-close">
+        <img src="http://s3.amazonaws.com/codecademy-content/courses/ltp2/img/uber/close.png">
+      </div>
+      <div id="links">
+      <ul>
+        <li><a href="#scroll1">Home</a></li>
+        <li><a href="#scroll2">Flight Assistance</a></li>
+        <li><a href="#scroll3">Translator</a></li>
+        <li><a href="#scroll4">Reviews</a></li>
+      </ul>
+    </div>
+    </div>
+
+    <div id="scroll1" class="link"></div>
+    <div class="jumbotron">
+      <div class="container">
+        <h1>Getting To Paradise</h1>
+        <p>The Many Ways to Reach Your Destination</p>
+      </div>
+    </div> 
+
+    <div id="scroll2" class="link"></div>
+    <div id="one">
+    <h3>Type Your City of Origin And We'll Provide the Flights to Get You to Sri Lanka</h3>
+  <div ng-controller="mainController">  
+  City of Origin: <input type="text" ng-model="scope.newCity" placeholder="London" /> <!--/><a href="#" class="btn btn-default" ng-click="addCity()">Enter</a> -->
+  </div>  
+<div class="container">
+   <div id="text">
+            <div class="col-md-2">
+            <div ng-controller="firstController">
+              <h3>Airlines</h3>
+                <ul>
+                 <li ng-repeat="x in names">
+                     {{ x.name }}
+                 </li>
+                <ul>
+            </div>
+            </div>
+
+             <div class="col-md-3">
+            <div ng-controller="fifthController">
+              <h3>Website</h3>
+              <ul>
+                 <li ng-repeat="x in names"><a href="#">
+                     {{ x.url }}
+                 </a></li>
+              </ul>
+            </div>
+            </div>
+            
+
+            <div class="col-md-2">
+             <div ng-controller="secondController">
+                <h3>Airports</h3>
+                <ul>
+                 <li ng-repeat="x in names">
+                     {{ x.name }}
+                 </li>
+              </ul>
+            </div>
+            </div>
+
+            <div class="col-md-2">
+            <div ng-controller="fourthController">
+              <h3>Manufacturer</h3>
+              <ul>
+                 <li ng-repeat="x in names">
+                     {{ x.manufacturer }}
+                 </li>
+              </ul>
+            </div>
+            </div>
+
+            <div class="col-md-3">
+            <div ng-controller="thirdController">
+              <h3>Model</h3>
+              <ul>
+                 <li ng-repeat="x in names">
+                     {{ x.model }}
+                 </li>
+              </ul>
+            </div>
+            </div>
+</div>         
+</div>
+</div> 
+
+
+ <div id="scroll3" class="link"></div>
+ <div id="two">
+ <div ng-app="langApp1">
+ <div class="block"></div>
+ <h1> TRANSLATE </h1>
+ <div ng-controller="LangController">
+ <div class="button">
+ <button ng-click="sinhalaLang()">Sinhala</button>
+ <button ng-click="tamilLang()">Tamil</button>
+ <button ng-click="arabicLang()">Arabic</button>
+ </div>
+
+ <div class="row">
+ <div class="col-md-6">
+ <div class="first">
+ <p> <strong>IMPORTANT WORDS</strong></p>
+ <p> <strong>{{hello}}</strong> is how you say hello</p>
+ <p> <strong>{{how}}</strong> is how you say how are you?</p>
+ <p> <strong>{{food}}</strong> is how you say food</p>
+ <p> <strong>{{sleep}}</strong> is how you say sleep</p>
+ <p> <strong>{{transportation}}</strong> is how you say transportation</p>
+ <p> <strong>{{money}}</strong> is how you say money</p>
+ <p> <strong>{{hospital}}</strong> is how you say hospital</p>
+ <p> <strong>{{hotel}}</strong> is how you say hotel</p>
+ <p> <strong>{{restaurant}}</strong> is how you say restaurant</p>
+ <p> <strong>{{airport}}</strong> is how you say airport</p>
+ </div>
+ </div>
+
+ <div class="col-md-6">
+ <div class="second">
+ <p> <strong>USEFUL PHRASES</strong> </p>
+ <p> My Name Is...<p/>
+ <p> <strong>{{name}}</strong> </p>
+ <p> Where is the bathroom?</p>
+ <p> <strong>{{bathroom}}?</strong> </p>
+ <p> How much does it cost?</p>
+ <p> <strong>{{cost}}?</strong> </p>
+ <p> Where is the taxi?</p>
+ <p> <strong>{{taxi}}?</strong> </p>
+ <p> How far away is it?</p>
+ <p> <strong>{{distance}}?</strong> </p>
+ </div>
+ </div>
+</div>
+</div>
+</div>
+</div>
+
+
+    <div id="three">
+    <div id="scroll4" class="link"></div>
+    
+  <!--   <div ng-app="reviewSection">  -->
+    <div ng-controller="StoreController as store">
+  
+  <!--  Product Container  -->
+      
+    <div class="list-group-item" ng-repeat="product in store.products">
+        
+
+        <!-- Product Tabs  -->
+        <section ng-controller="TabController as tab"> 
+         
+        <!--  Review Tab's Content  -->
+        <div ng-show="tab.isSet">
+            <!--  Product Reviews List -->
+            
+        <h1 style="text-align:center">Reviews</h1>
+
+        <div ng-app="myApp" ng-controller="myCtrl">
+        <div class="press">
+        <button ng-click="count = count + 1">Like</button>
+        <button ng-click="dcount = dcount + 1">Dislike</button>
+        <div id="count">
+        <p> {{ count }}  </p> 
+        <p> {{ dcount }} </p>
+        </div>
+        </div>
+        </div>
+
+          <div id="textII">
+            <ul>
+              <li ng-repeat="review in product.reviews">
+                <blockquote>
+                  <span ng-if="review.stars.length !== null"><strong>{{review.stars}} Stars</strong></span>
+                  {{review.body}}
+                 <cite class="clearfix">&#8212;{{review.author}} on {{review.createdOn | date}}</cite>
+                </blockquote>
+              </li>
+            </ul>
+          </div>
+
+            <!--  Review Form -->
+            <div id="form">
+            <form name="reviewForm" ng-controller="ReviewController as reviewCtrl" ng-submit="reviewCtrl.addReview(product)">
+              <h4>Submit a Review</h4>
+              <fieldset class="form-group">
+                <select ng-model="reviewCtrl.review.stars" class="form-control" ng-options="stars for stars in [5,4,3,2,1]" title="Stars" required>
+                  <option value>Rate the Website (Stars)</option>
+                </select>
+              </fieldset>
+              <fieldset class="form-group">
+                <textarea ng-model="reviewCtrl.review.body" class="form-control" placeholder="Write a short review of the website..." title="Review" required></textarea>
+              </fieldset>
+              <fieldset class="form-group">
+                <input ng-model="reviewCtrl.review.author" type="email" class="form-control" placeholder="johnsmith@example.com" title="Email" required/>
+              </fieldset>
+              <fieldset class="form-group">
+                <input type="submit" class="btn btn-primary pull-right" value="Submit Review" />
+              </fieldset>
+            </form>
+          </div>
+          </div>
+
+        </section>
+      </div>
+      </div>
+      </div>
+      </div>
+
+
+     <!-- Load jQuery -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+ 
+    <!-- Load ScrollTo -->
+    <script src="http://flesler-plugins.googlecode.com/files/jquery.scrollTo-1.4.2-min.js"></script>
+ 
+    <!-- Load LocalScroll -->
+    <script src="http://flesler-plugins.googlecode.com/files/jquery.localscroll-1.2.7-min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+  <script src="navtransport.js"></script> 
+  </body>
+</html>
+    
