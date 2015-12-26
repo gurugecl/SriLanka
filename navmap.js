@@ -1,226 +1,230 @@
-body {
-  position: relative;
-  background-color: #F9F9F9;
-  padding: 0;
-  margin: 0;
+/*google maps api*/
+
+var myCenter=new google.maps.LatLng(7.88888,81.0000);
+
+
+var dubai=new google.maps.LatLng(25.2048,55.2708);
+var tokyo=new google.maps.LatLng(35.6833,139.6833);
+var sydney=new google.maps.LatLng(-33.8650,151.2094);
+var colombo=new google.maps.LatLng(6.9344,79.8428);
+
+function initialize()
+{
+  var mapProp = {
+    center:myCenter,
+    zoom:2,
+    mapTypeId:google.maps.MapTypeId.SATELLITE
+    };
+  var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+  var marker=new google.maps.Marker({
+    position:myCenter,
+    animation:google.maps.Animation.BOUNCE
+    });
+    marker.setMap(map);
+
+  var infoWindow = new google.maps.InfoWindow({
+  content:"SRI LANKA"
+  });
+
+  infoWindow.open(map,marker);
+
+  var marker5=new google.maps.Marker({
+    position: new google.maps.LatLng(25.2048,55.2708),
+    animation:google.maps.Animation.BOUNCE
+    });
+    marker5.setMap(map);
+
+  var infowindow5 = new google.maps.InfoWindow({
+  content:"DUBAI"
+  });
+
+  infowindow5.open(map,marker5);
+
+  var marker6=new google.maps.Marker({
+    position: new google.maps.LatLng(35.6833,139.6833),
+    animation:google.maps.Animation.BOUNCE
+    });
+    marker6.setMap(map);
+
+  var infowindow6 = new google.maps.InfoWindow({
+  content:"TOKYO"
+  });
+
+  infowindow6.open(map,marker6);
+
+  var marker7=new google.maps.Marker({
+    position: new google.maps.LatLng(-33.8650,151.2094),
+    animation:google.maps.Animation.BOUNCE
+    });
+    marker7.setMap(map);
+
+  var infowindow7 = new google.maps.InfoWindow({
+  content:"SYDNEY"
+  });
+
+  infowindow7.open(map,marker7);
+
+
+
+  var myTrip=[dubai,colombo,tokyo,colombo,sydney];
+  var flightPath=new google.maps.Polyline({
+  path:myTrip,
+  strokeColor:"#0000FF",
+  strokeOpacity:0.8,
+  strokeWeight:2
+  });
+
+  flightPath.setMap(map);
+
+  var mapProp2 = {
+    center: new google.maps.LatLng(7.88888,81.0000),
+    zoom:7,
+    mapTypeId: google.maps.MapTypeId.SATELLITE
+  };
+  var map2 = new google.maps.Map(document.getElementById("googleMap2"),mapProp2);
+  var marker2=new google.maps.Marker({
+    position: new google.maps.LatLng(6.9344,79.8428),
+    animation:google.maps.Animation.BOUNCE
+    });
+    marker2.setMap(map2);
+
+  var infowindow2 = new google.maps.InfoWindow({
+  content:"COLOMBO"
+  });
+
+  infowindow2.open(map2,marker2);
+
+  var marker3=new google.maps.Marker({
+    position: new google.maps.LatLng(7.2964,80.6350),
+    animation:google.maps.Animation.BOUNCE
+    });
+    marker3.setMap(map2);
+
+  var infowindow3 = new google.maps.InfoWindow({
+  content:"KANDY"
+  });
+
+  infowindow3.open(map2,marker3);
+
+  var marker4=new google.maps.Marker({
+    position: new google.maps.LatLng(6.0536,80.2117),
+    animation:google.maps.Animation.BOUNCE
+    });
+    marker4.setMap(map2);
+
+  var infowindow4 = new google.maps.InfoWindow({
+  content:"GALLE"
+  });
+
+  infowindow4.open(map2,marker4);
+  
 }
 
-.tripadvisor {
-  margin-top:100px;
-  margin-left: 80px;
-}
-
-.nav a {
-  color: #5a5a5a;
-  font-size: 11px;
-  font-weight: bold;
-  padding: 14px 10px;
-  text-transform: uppercase;
-}
-
-.nav li {
-  display: inline;
-}
-
-.jumbotron {
-  background-image:url('http://paragonsrilanka.com/tl_files/sri_lanka/history.jpg');
-  height: 500px;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-.jumbotron .container {
-  position: relative;
-  top:100px;
-}
-
-.jumbotron h1 {
-  color: #fff;
-  font-size: 48px;  
-  font-family: 'Shift', sans-serif;
-  font-weight: bold;
-}
-
-.jumbotron p {
-  font-size: 20px;
-  color: #fff;
-}
-
-.container .menu-link {
-  color: #fff;
-  font: bold;
-}
-
-.learn-more {
-  background-color: #f7f7f7;
-}
-
-.menu {
-  background: #202024 url('http://stock-images.antiqueprints.com/images/sm0052-Ceylon(d9764).jpg') repeat left top;
-  left: -285px;  /* start off behind the scenes */
-  height: 100%;
-  position: fixed;
-  width: 285px;
-  top: 0px;
-  z-index: 401;
-}
-
-.menu ul {
-  border-top: 1px solid #636366;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.menu li {
-  border-bottom: 1px solid #636366;
-  font-family: 'Open Sans', sans-serif;
-  line-height: 45px;
-  padding-bottom: 3px;
-  padding-left: 20px;
-  padding-top: 3px;
-}
-
-.menu a {
-  color: black;
-  font-size: 15px;
-  text-decoration: bold;
-  text-transform: uppercase;
-  cursor: pointer;
-}
-
-.icon-close {
-  cursor: pointer;
-  padding-left: 10px;
-  padding-top: 10px;
-}
-
-.icon-menu {
-  color: #fff;
-  cursor: pointer;
-  font-family: 'Open Sans', sans-serif;
-  font-size: 16px;
-  padding-bottom: 25px;
-  padding-left: 25px;
-  padding-top: 25px;
-  text-decoration: none;
-  text-transform: uppercase;
-}
-
-.icon-menu i {
-  margin-right: 5px;
-}
+google.maps.event.addDomListener(window, 'load', initialize);
 
 
-.forecast {
-  display: inline;
-}
+var main = function() {
+
+/* Slide out menu. Push the body and the nav over by 285px over */
+
+  $('.menu-link').click(function(){
+    
+    $('.menu').animate({
+      left: "0px"
+    }, 200);
+
+    $('body').animate({
+      left: "285px"
+    }, 200);
+
+  });
 
 
-#weather, #weather2, #weather3{
-  margin-top: 75px;
-}
+  /* Then push them back */
+  $('.icon-close').click(function() {
+    $('.menu').animate({
+      left: "-285px"
+    }, 200);
 
-.col-md-7, .col-md-5 {
-  margin-top: 75px;
-  font-family: 'Shift', sans-serif;
-  font-weight: bold;
-}
+    $('body').animate({
+      left: "0px"
+    }, 200);
+  });
 
-.col-md-7 {
-  left: 80px;
-}
+  $('#links').localScroll({
+           target:'body'
+        });
 
-#googleMap, #googleMap2 {
-  border-style: solid;
-    border-width: 3px;
-}
+};
+
+ $(document).ready(main);
+
+
+
 
 /* weather forecast */
 
-.weather {
-  width: 425px;
-  margin: 0px auto;
-  text-align: center;
-  text-transform: uppercase;
-}
+$(document).ready(function() {
+ $.simpleWeather({
+    woeid: '2189783', 
+    location: '',
+    unit: 'f',
+    success: function(weather) {
+      html = '<h2>'+weather.temp+'&deg;'+weather.units.temp+'</h2>';
+      html += '<ul><li>'+weather.city+', '+weather.region+'</li>';
+      html += '<li class="currently">'+weather.currently+'</li>';
+      html += '<li>'+weather.alt.temp+'&deg;C</li></ul>';
+      
+      for(var i=0;i<weather.forecast.length;i++) {
+        html += '<p>'+weather.forecast[i].day+': '+weather.forecast[i].high+'</p>';
+      }
+  
+      $("#weather").html(html);
+    },
+    error: function(error) {
+      $("#weather").html('<p>'+error+'</p>');
+    }
+  });
 
-.weather h2 {
-  margin: 0 0 8px;
-  color: #fff;
-  font-size: 150px;
-  font-weight: 300;
-  text-align: center;
-  text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.15);
+  $.simpleWeather({
+    woeid: '2189780', 
+    location: '',
+    unit: 'f',
+    success: function(weather) {
+      html = '<h2>'+weather.temp+'&deg;'+weather.units.temp+'</h2>';
+      html += '<ul><li>'+weather.city+', '+weather.region+'</li>';
+      html += '<li class="currently">'+weather.currently+'</li>';
+      html += '<li>'+weather.alt.temp+'&deg;C</li></ul>';
+      
+      for(var i=0;i<weather.forecast.length;i++) {
+        html += '<p>'+weather.forecast[i].day+': '+weather.forecast[i].high+'</p>';
+      }
+  
+      $("#weather2").html(html);
+    },
+    error: function(error) {
+      $("#weather2").html('<p>'+error+'</p>');
+    }
+  });
 
-}
-
-.weather ul {
-  margin: 0;
-  padding: 0;
-}
-
-.weather li {
-  background: #fff;
-  background: rgba(255,255,255,0.90);
-  padding: 20px;
-  display: inline-block;
-  border-radius: 5px;
-}
-
-.weather p {
-  color:white;
-}
-
-.weather .currently {
-  margin: 0 20px;
-}
-
-#weather {
-  background: #1192d3 url(http://i.ytimg.com/vi/4o1TFIIciAg/maxresdefault.jpg) no-repeat bottom right;
-  background-size: 700px, 800px, 600px, 800px;
-}
-
-#weather2 {
-  background: #1192d3 url(http://www.srilankatour.travel/wp-content/uploads/2015/01/Leisure-Creations-Kandy-Big.jpg) no-repeat bottom right;
-  background-size: 700px, 800px, 600px, 800px;
-}
-
-#weather3 {
-  background: #1192d3 url(http://www.remotelands.com/images/citys/130509008.jpg) no-repeat bottom right;
-  background-size: 700px, 800px, 600px, 800px;
-}
-
-#navigation {
-position: fixed;
-top: 0;
-width: 100%;
-color: #ffffff;
-height: 72px;
-text-align: center;
-padding-top: 15px;
-/* Adds shadow to the bottom of the bar */
--webkit-box-shadow: 0px 0px 8px 0px #000000;
--moz-box-shadow: 0px 0px 8px 0px #000000;
-box-shadow: 0px 0px 8px 0px #000000;
-/* Adds the transparent background */
-background-color: rgba(1, 1, 1, 0.8);
-color: rgba(1, 1, 1, 0.8);
-z-index:400;
-}
-
-#navigation a {
-font-size: 14px;
-padding-left: 15px;
-padding-right: 15px;
-color: white;
-text-decoration: none;
-z-index:400;
-font-family: 'Shift', sans-serif;
-font-weight: bold;
-}
-
-#navigation a:hover {
-color: grey;
-} 
-
+   $.simpleWeather({
+    woeid: '2189781', 
+    location: '',
+    unit: 'f',
+    success: function(weather) {
+      html = '<h2>'+weather.temp+'&deg;'+weather.units.temp+'</h2>';
+      html += '<ul><li>'+weather.city+', '+weather.region+'</li>';
+      html += '<li class="currently">'+weather.currently+'</li>';
+      html += '<li>'+weather.alt.temp+'&deg;C</li></ul>';
+      
+      for(var i=0;i<weather.forecast.length;i++) {
+        html += '<p>'+weather.forecast[i].day+': '+weather.forecast[i].high+'</p>';
+      }
+  
+      $("#weather3").html(html);
+    },
+    error: function(error) {
+      $("#weather3").html('<p>'+error+'</p>');
+    }
+  });
+});
