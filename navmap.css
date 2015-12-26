@@ -1,6 +1,8 @@
 body {
   position: relative;
   background-color: #F9F9F9;
+  padding: 0;
+  margin: 0;
 }
 
 .tripadvisor {
@@ -188,3 +190,36 @@ body {
   background: #1192d3 url(http://www.remotelands.com/images/citys/130509008.jpg) no-repeat bottom right;
   background-size: 700px, 800px, 600px, 800px;
 }
+
+#navigation {
+position: fixed;
+top: 0;
+width: 100%;
+color: #ffffff;
+height: 72px;
+text-align: center;
+padding-top: 15px;
+/* Adds shadow to the bottom of the bar */
+-webkit-box-shadow: 0px 0px 8px 0px #000000;
+-moz-box-shadow: 0px 0px 8px 0px #000000;
+box-shadow: 0px 0px 8px 0px #000000;
+/* Adds the transparent background */
+background-color: rgba(1, 1, 1, 0.8);
+color: rgba(1, 1, 1, 0.8);
+z-index:400;
+}
+#navigation a {
+font-size: 14px;
+padding-left: 15px;
+padding-right: 15px;
+color: white;
+text-decoration: none;
+z-index:400;
+font-family: 'Shift', sans-serif;
+font-weight: bold;
+}
+
+#navigation a:hover {
+color: grey;
+} 
+
