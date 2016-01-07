@@ -34,14 +34,14 @@ var main = function() {
 
  $(document).ready(main);
 
- var myApp = angular.module('myApp', []);
+var myApp = angular.module('myApp', []);
 
 myApp.controller('mainController', function($scope, $http) {
-//if ($scope.newCity === undefined) {
-//   $scope.newCity = "London";
+if ($scope.newCity === undefined) {
+   $scope.newCity = "London"};
 
-//$scope.newCity = '';
-//$scope.addCity;
+$scope.newCity = '';
+    $scope.addCity = function () { newCity: $scope.newCity};
 });
 
 myApp.controller('firstController', function($scope, $http) {
