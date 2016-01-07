@@ -45,20 +45,20 @@
 
     <div id="scroll2" class="link"></div>
     <div id="one">
-    <h3>Type Your City of Origin And We'll Provide the Flights to Get You to Sri Lanka</h3>
-  <div ng-controller="mainController">  
-  City of Origin: <input type="text" ng-model="scope.newCity" placeholder="London" /> <!--/><a href="#" class="btn btn-default" ng-click="addCity()">Enter</a> -->
-  </div>  
+   <h3>Type Your City of Origin And We'll Provide the Flights to Get You to Sri Lanka</h3>
+  <div ng-controller="mainController"> 
+  City of Origin: <input type="text" ng-model="newCity" placeholder="London" /><a href="#" class="btn btn-default" ng-click="addCity()">Enter</a> 
+ </div>  
 <div class="container">
    <div id="text">
             <div class="col-md-2">
             <div ng-controller="firstController">
               <h3>Airlines</h3>
                 <ul>
-                 <li ng-repeat="x in names">
-                     {{ x.name }}
-                 </li>
-                <ul>
+  					     <li ng-repeat="x in names">
+    					       {{ x.name }}
+  					     </li>
+				        <ul>
             </div>
             </div>
 
