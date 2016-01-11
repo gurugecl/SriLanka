@@ -36,13 +36,17 @@ var main = function() {
 
 var myApp = angular.module('myApp', []);
 
-myApp.controller('mainController', function($scope, $http) {
-if ($scope.newCity === undefined) {
-   $scope.newCity = "London"};
+myApp.controller('mainController', ['$scope', '$http',  function($scope, $http) {
 
-$scope.newCity = '';
-    $scope.addCity = function () { newCity: $scope.newCity};
-});
+  // if($scope.newCity === undefined) {
+  // $scope.newCity = "London"
+  // };
+
+  $scope.addCity = function ()  {
+  $http.get("http://free.rome2rio.com/api/1.2/json/Search?key=isLifQOh&oName=" + $scope.newCity + "&dName=Colombo")
+  .then(function (response) {$scope.names = response.data.airlines;});
+
+}]);
 
 myApp.controller('firstController', function($scope, $http) {
   $http.get("http://free.rome2rio.com/api/1.2/json/Search?key=isLifQOh&oName=" + $scope.newCity + "&dName=Colombo")
@@ -68,7 +72,6 @@ myApp.controller('fifthController', function($scope, $http) {
   $http.get("http://free.rome2rio.com/api/1.2/json/Search?key=isLifQOh&oName=London&dName=Colombo")
   .then(function (response) {$scope.names = response.data.airlines;});
 });
-
 
 (function(angular) {
   'use strict';
