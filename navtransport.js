@@ -44,7 +44,7 @@ myApp.controller('mainController', ['$scope', '$http',  function($scope, $http) 
 
   $scope.addCity = function ()  {
   $http.get("http://free.rome2rio.com/api/1.2/json/Search?key=isLifQOh&oName=" + $scope.newCity + "&dName=Colombo")
-  .then(function (response) {$scope.names = response.data.airlines;});
+  .then(function (response) {$scope.names = response.data.airlines;})};
 
 }]);
 
@@ -72,6 +72,7 @@ myApp.controller('fifthController', function($scope, $http) {
   $http.get("http://free.rome2rio.com/api/1.2/json/Search?key=isLifQOh&oName=London&dName=Colombo")
   .then(function (response) {$scope.names = response.data.airlines;});
 });
+
 
 (function(angular) {
   'use strict';
