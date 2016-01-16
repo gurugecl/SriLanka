@@ -37,41 +37,27 @@ var main = function() {
 var myApp = angular.module('myApp', []);
 
 myApp.controller('mainController', ['$scope', '$http',  function($scope, $http) {
+  $scope.flightData = {};
 
-  // if($scope.newCity === undefined) {
-  // $scope.newCity = "London"
-  // };
+  $http.get("http://free.rome2rio.com/api/1.2/json/Search?key=isLifQOh&oName=London&dName=Colombo")
+  .then(function (response) {
+    $scope.flightData.airlines = response.data.airlines;
+    $scope.flightData.airports = response.data.airports;
+    $scope.flightData.aircrafts = response.data.aircrafts;
+    
 
+  });
+
+ 
   $scope.addCity = function ()  {
   $http.get("http://free.rome2rio.com/api/1.2/json/Search?key=isLifQOh&oName=" + $scope.newCity + "&dName=Colombo")
-  .then(function (response) {$scope.names = response.data.airlines;})};
+  .then(function (response) {
+  $scope.flightData.airlines = response.data.airlines;
+  $scope.flightData.airports = response.data.airports;
+  $scope.flightData.aircrafts = response.data.aircrafts;})};
 
 }]);
-
-myApp.controller('firstController', function($scope, $http) {
-  $http.get("http://free.rome2rio.com/api/1.2/json/Search?key=isLifQOh&oName=" + $scope.newCity + "&dName=Colombo")
-  .then(function (response) {$scope.names = response.data.airlines;});
-});
-
-myApp.controller('secondController', function($scope, $http) {
-  $http.get("http://free.rome2rio.com/api/1.2/json/Search?key=isLifQOh&oName=London&dName=Colombo")
-  .then(function (response) {$scope.names = response.data.airports;});
-});
-
-myApp.controller('thirdController', function($scope, $http) {
-  $http.get("http://free.rome2rio.com/api/1.2/json/Search?key=isLifQOh&oName=London&dName=Colombo")
-  .then(function (response) {$scope.names = response.data.aircrafts;});
-});
-
-myApp.controller('fourthController', function($scope, $http) {
-  $http.get("http://free.rome2rio.com/api/1.2/json/Search?key=isLifQOh&oName=London&dName=Colombo")
-  .then(function (response) {$scope.names = response.data.aircrafts;});
-});
-
-myApp.controller('fifthController', function($scope, $http) {
-  $http.get("http://free.rome2rio.com/api/1.2/json/Search?key=isLifQOh&oName=London&dName=Colombo")
-  .then(function (response) {$scope.names = response.data.airlines;});
-});
+  
 
 
 (function(angular) {
