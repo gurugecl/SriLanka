@@ -45,7 +45,7 @@
 
     <div id="scroll2" class="link"></div>
     <div id="one">
-   <div ng-controller="mainController"> 
+    <div ng-controller="mainController"> 
 <h3>Type Your City of Origin And We'll Provide the Flights to Get You to Sri Lanka</h3>
  City of Origin: <input type="text" ng-model="newCity" placeholder="London" /><a href="#" class="btn btn-default" ng-click="addCity()">Enter</a>  
 <div class="container">
@@ -63,14 +63,12 @@
              <div class="col-md-3">
               <h3>Website</h3>
               <ul>
-                 <li ng-repeat="website in flightData.websites"><a href="{{website.url}}">
+                  <li ng-repeat="website in flightData.airlines"><a href="{{website.url}}"> 
                      {{ website.url }}
                  </a></li>
               </ul>
             </div>
           
-            
-
             <div class="col-md-2">
                 <h3>Airports</h3>
                 <ul>
@@ -83,8 +81,8 @@
             <div class="col-md-2">
               <h3>Manufacturer</h3>
               <ul>
-                 <li ng-repeat="manufacturer in flightData.aircrafts.manufacturers">
-                     {{ manufacturer.name }}
+                 <li ng-repeat="manufacturer in flightData.aircrafts">
+                     {{ manufacturer.manufacturer }}
                  </li>
               </ul>
             </div>
@@ -92,17 +90,15 @@
             <div class="col-md-3">
               <h3>Model</h3>
               <ul>
-                 <li ng-repeat="model in flightData.aircrafts.models">
-                     {{ model.name }}
+                 <li ng-repeat="model in flightData.aircrafts">
+                     {{ model.model }}
                  </li>
               </ul>
             </div>
             </div>
-          
 </div>         
 </div>
-</div> 
-
+</div>
 
  <div id="scroll3" class="link"></div>
  <div id="two">
