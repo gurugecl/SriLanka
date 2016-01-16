@@ -45,67 +45,60 @@
 
     <div id="scroll2" class="link"></div>
     <div id="one">
-   <h3>Type Your City of Origin And We'll Provide the Flights to Get You to Sri Lanka</h3>
-  <div ng-controller="mainController"> 
-  City of Origin: <input type="text" ng-model="newCity" placeholder="London" /><a href="#" class="btn btn-default" ng-click="addCity()">Enter</a> 
- </div>  
+   <div ng-controller="mainController"> 
+<h3>Type Your City of Origin And We'll Provide the Flights to Get You to Sri Lanka</h3>
+ City of Origin: <input type="text" ng-model="newCity" placeholder="London" /><a href="#" class="btn btn-default" ng-click="addCity()">Enter</a>  
 <div class="container">
    <div id="text">
             <div class="col-md-2">
-            <div ng-controller="firstController">
               <h3>Airlines</h3>
                 <ul>
-  					     <li ng-repeat="x in names">
-    					       {{ x.name }}
-  					     </li>
-				        <ul>
+                 <li ng-repeat="airline in flightData.airlines">
+                     {{ airline.name }}
+                 </li>
+                <ul>
             </div>
-            </div>
+          
 
              <div class="col-md-3">
-            <div ng-controller="fifthController">
               <h3>Website</h3>
               <ul>
-                 <li ng-repeat="x in names"><a href="#">
-                     {{ x.url }}
+                 <li ng-repeat="website in flightData.websites"><a href="{{website.url}}">
+                     {{ website.url }}
                  </a></li>
               </ul>
             </div>
-            </div>
+          
             
 
             <div class="col-md-2">
-             <div ng-controller="secondController">
                 <h3>Airports</h3>
                 <ul>
-                 <li ng-repeat="x in names">
-                     {{ x.name }}
+                 <li ng-repeat="airport in flightData.airports">
+                     {{ airport.name }}
                  </li>
               </ul>
-            </div>
             </div>
 
             <div class="col-md-2">
-            <div ng-controller="fourthController">
               <h3>Manufacturer</h3>
               <ul>
-                 <li ng-repeat="x in names">
-                     {{ x.manufacturer }}
+                 <li ng-repeat="manufacturer in flightData.aircrafts.manufacturers">
+                     {{ manufacturer.name }}
                  </li>
               </ul>
-            </div>
             </div>
 
             <div class="col-md-3">
-            <div ng-controller="thirdController">
               <h3>Model</h3>
               <ul>
-                 <li ng-repeat="x in names">
-                     {{ x.model }}
+                 <li ng-repeat="model in flightData.aircrafts.models">
+                     {{ model.name }}
                  </li>
               </ul>
             </div>
             </div>
+          
 </div>         
 </div>
 </div> 
