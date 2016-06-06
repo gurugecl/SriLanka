@@ -1,7 +1,7 @@
 
 Sri Lanka Website
 
-This is my website for people interested in visiting the island nation of Sri Lanka that I'm currently working on. The website seeks to entice people to travel to Sri Lanka as well as containing information about the country and links to help plan your trip.
+This is my website for people interested in visiting the island nation of Sri Lanka. The website seeks to entice people to travel to Sri Lanka as well as containing information about the country and links to help plan your trip. Some of the languages and skills used in this website include html, css, bootstrap, javascript, jquery, angularjs, APIs etc.
     
 The pages of the website that I have created include the Home page, the Map page, and the Transportation page all which can be accessed by clicking on the links on the navigation bar at the top. The code for the Home page are within the navlanka files (html, css, javascript). This page containts numerous galleries and pictures to entice the traveller to visis Sri Lanka as well as links to other sites that give more information about places to visist, food to eat, and hotels to stay in.  
     
